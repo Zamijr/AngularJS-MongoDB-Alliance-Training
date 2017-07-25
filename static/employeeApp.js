@@ -23,6 +23,10 @@ app.config(function ($routeProvider) {
           controller: 'registerController',
           templateUrl: '/partials/register.html'
      })
+    .when('/internalTalent', {
+          controller: 'internalTalentController',
+          templateUrl: '/partials/internalTalent.html'
+     })
     .when('/resources', {
         controller: 'resourcesController',
         templateUrl: '/partials/resources.html'

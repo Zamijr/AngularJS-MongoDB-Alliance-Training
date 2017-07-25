@@ -13,8 +13,22 @@ app.directive('profile', function($http) {
                 scope.editMode = true;
             }
 
-            scope.detailProfileDone = function () {
+            scope.detailProfileDone = function (id) {
                 scope.editMode = false;
+                //Only update NAME-- Add more fields..
+                var data = {
+                    'firstname': scope.data.firstname
+                }
+
+                $http.put('/users/' + id,data)
+                    .success(function(data) {
+                        alert('Update Done');
+                        scope.refresh();
+                    })
+                    .error(function(data) {
+                        alert('Update ERROR!');
+                        console.log('Error: ' + data);
+                    });
             }
 
             scope.deleteUser = function (id) {

@@ -1,0 +1,34 @@
+
+<div class="row">
+    <div class="col-lg-4">
+        <h2>Skills and Years Exp. </h2>
+        <div class="input-group skillGroup">
+                <div ng-repeat="x in skillsBoxModel">
+                    <div class="row">
+                        <div class='col-lg-8'>
+                            <input type="checkbox" ng-model="x.checked"  >
+                            {{x.name}}
+                        </div>
+                        <div class='col-lg-4'>
+                            <select ng-model='x.skillYears'>
+                                <option  ng-repeat="y in years" value={{y.year}}>
+                                    {{y.year}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-lg-8" >
+        <div class="row">
+            <profile ng-repeat="resource in resources |filter:buscaBy()|filter:search" resource-data="resource" refresh="getResources()"> </profile>
+				<div style="margin-top: 100px;" ng-show="noUsersFound">
+				    <h3 align="center">No Users Found</h3>
+				</div>
+        </div>
+    </div>
+</div>
+<br>
+<my-d3-chart chart-data='[10,20,30,40,50]'></my-d3-chart>
+<my-d3-bar-chart chart-data='[10,20,30,40,50]'>Vertical Bar Display HEREEEEEE</my-d3-bar-chart>

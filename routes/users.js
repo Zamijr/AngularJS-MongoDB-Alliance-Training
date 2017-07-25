@@ -32,6 +32,8 @@ router.get('/:id', function(req, res, next) {
 
 /* PUT /users/:id */
 router.put('/:id', function(req, res, next) {
+  console.log(req.params.id);
+  console.log(req.body);
   User.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);

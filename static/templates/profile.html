@@ -39,6 +39,10 @@
                     <div class="col-md-2">
                           <strong>Personal Skill:</strong> <br> {{data.personalSkill}}
                     </div>
+                    <div class="col-md-2">
+                          <strong>Skill Years Experience:</strong> <br> {{data.skillExperience}}
+                    </div>
+                    
                       <!--<div class="col-md-2">
                           <strong>Street:</strong> <br> {{data.location.street}}
                       </div>
@@ -87,7 +91,7 @@
         </span>
       </div>
       <div class="col-md-1">
-        <button class="btn" ng-click="detailProfileDone()">
+        <button class="btn" ng-click="detailProfileDone(data._id)">
           <span class="glyphicon glyphicon-pencil"></span>  Done
         </button>
       </div>

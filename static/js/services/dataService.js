@@ -5,3 +5,8 @@ app.factory('Data', function($http) {
    return $http.get('/employees');
       
 });
+
+app.factory('SkillsData', function() {
+   return ['Java','PHP','Javascript','HTML5','Css3','NodeJS','ReactJS'];
+});
+
